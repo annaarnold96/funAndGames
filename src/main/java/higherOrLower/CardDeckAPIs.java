@@ -1,15 +1,12 @@
 package higherOrLower;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kong.unirest.Unirest;
 
-import java.util.List;
+public class CardDeckAPIs {
 
-public class CardDeck {
-
-    public static JsonNode getADeck(int deckCount) throws Exception {
+    public static Deck getADeck(int deckCount) throws Exception {
 
         String url = "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=" + deckCount;
 
@@ -18,25 +15,16 @@ public class CardDeck {
         String deck = response.getBody();
         ObjectMapper mapper = new ObjectMapper();
 
+        JsonNode deckTree = mapper.readTree(deck);
 
-        return mapper.readTree(deck);
+        String deckId = String.valueOf(deckTree.get("deck_id"));
+        String remaining = String.valueOf(deckTree.get("remaining"));
+        String shuffled = String.valueOf(deckTree.get("shuffled"));
+
+
+        return new Deck(deckId,remaining,shuffled);
     }
 
-//    public static JsonNode drawCards(int numberOfCards, String deckID) throws Exception {
-//
-//        String url = "https://www.deckofcardsapi.com/api/deck/" + deckID + "/draw/?count=" + numberOfCards;
-//
-//        var response = Unirest.get(url).header("Accept", "application.json").asString();
-//
-//        String card = response.getBody();
-//        ObjectMapper mapper = new ObjectMapper();
-//
-//        var tree = mapper.readTree(card);
-//
-//
-//
-//        return tree;
-//    }
 
     public static Card drawCards(int numberOfCards, String deckID) throws Exception {
 
@@ -57,8 +45,7 @@ public class CardDeck {
         String suit = String.valueOf(cardDetails.get("suit"));
 
 
-        Card testCard = new Card(code,image,value,suit);
-        return testCard;
+        return new Card(code,image,value,suit);
     }
 
 }
