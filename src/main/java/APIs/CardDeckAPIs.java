@@ -1,7 +1,9 @@
-package higherOrLower;
+package APIs;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import GeneralClasses.Card;
+import GeneralClasses.Deck;
 import kong.unirest.Unirest;
 
 public class CardDeckAPIs {

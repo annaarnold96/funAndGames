@@ -1,4 +1,4 @@
-package higherOrLower;
+package GeneralClasses;
 
 public class Card {
 
