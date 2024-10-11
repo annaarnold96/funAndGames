@@ -1,10 +1,5 @@
 package higherOrLower;
 
-
-// import kong.unirest.Unirest;
-
-// import com.fasterxml.jackson.databind.ObjectMapper;
-
 import APIs.CardDeckAPIs;
 import GeneralClasses.Card;
 import GeneralClasses.Deck;
@@ -28,6 +23,7 @@ public class HigherOrLower implements Runnable {
             // ------------ DEBUGGING -------------
             // System.out.println(cardDrawn);
             // System.out.println(deck);
+            // ------------------------------------
 
             // Get card value & show the card
             String cardValue = cardDrawn.getValue();

@@ -1,7 +1,3 @@
-// ----------- REFACTOR SO IT CAN CALL GAMES TO RUN -----------
-
-
-
 import Controllers.CardGamesController;
 import picocli.CommandLine;
 
