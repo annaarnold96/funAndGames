@@ -15,7 +15,7 @@ public class Card {
     }
 
     public String getCode() {
-        return code;
+        return code.replace("\"", "");
     }
 
     public void setCode(String code) {
@@ -23,7 +23,7 @@ public class Card {
     }
 
     public String getImage() {
-        return image;
+        return image.replace("\"", "");
     }
 
     public void setImage(String image) {
@@ -31,7 +31,7 @@ public class Card {
     }
 
     public String getValue() {
-        return value;
+        return value.replace("\"", "");
     }
 
     public void setValue(String value) {
@@ -39,7 +39,7 @@ public class Card {
     }
 
     public String getSuit() {
-        return suit;
+        return suit.replace("\"", "");
     }
 
     public void setSuit(String suit) {

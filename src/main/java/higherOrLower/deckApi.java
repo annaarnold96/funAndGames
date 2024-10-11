@@ -33,7 +33,7 @@ public class deckApi {
         //System.out.println(cardDrawn);
 
         // Show the card
-        String cardValue = cardDrawn.getValue().replace("\"", "");
+        String cardValue = cardDrawn.getValue();
         System.out.println("Card drawn is: " + cardValue + " " + cardDrawn.getSuit().replace("\"", ""));
 
         int intCardValue = cardDrawn.setFaceCards(cardValue);
@@ -53,11 +53,11 @@ public class deckApi {
 
             // Draw next card
             cardDrawn = CardDeck.drawCards(1, shortDeckId);
-            cardValue = cardDrawn.getValue().replace("\"", "");
+            cardValue = cardDrawn.getValue();
            System.out.println("Card drawn is: " + cardValue + " " + cardDrawn.getSuit().replace("\"", ""));
 
            intCardValue = cardDrawn.setFaceCards(cardValue);
-           
+
 
             if ((intCardValue < lastCardValue && answer.equals("l") || (intCardValue > lastCardValue && answer.equals("h")))) {
                 System.out.println("You are correct!");
