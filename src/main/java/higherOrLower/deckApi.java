@@ -35,19 +35,8 @@ public class deckApi {
         // Show the card
         String cardValue = cardDrawn.getValue().replace("\"", "");
         System.out.println("Card drawn is: " + cardValue + " " + cardDrawn.getSuit().replace("\"", ""));
-        int intCardValue = 0;
 
-        if (cardValue.equals("ACE")) {
-            intCardValue = 1;
-        } else if (cardValue.equals("JACK")) {
-            intCardValue = 11;
-        } else if (cardValue.equals("QUEEN")) {
-            intCardValue = 12;
-        } else if (cardValue.equals("KING")) {
-            intCardValue = 13;
-        } else {
-            intCardValue = Integer.parseInt(cardValue);
-        }
+        int intCardValue = cardDrawn.setFaceCards(cardValue);
 
         // Repeat until lost
         while (winning == true) {
@@ -64,21 +53,11 @@ public class deckApi {
 
             // Draw next card
             cardDrawn = CardDeck.drawCards(1, shortDeckId);
-            System.out.println(cardDrawn);
             cardValue = cardDrawn.getValue().replace("\"", "");
            System.out.println("Card drawn is: " + cardValue + " " + cardDrawn.getSuit().replace("\"", ""));
 
-            if (cardValue.equals("ACE")) {
-                intCardValue = 1;
-            } else if (cardValue.equals("JACK")) {
-                intCardValue = 11;
-            } else if (cardValue.equals("QUEEN")) {
-                intCardValue = 12;
-            } else if (cardValue.equals("KING")) {
-                intCardValue = 13;
-            } else {
-                intCardValue = Integer.parseInt(cardValue);
-            }
+           intCardValue = cardDrawn.setFaceCards(cardValue);
+           
 
             if ((intCardValue < lastCardValue && answer.equals("l") || (intCardValue > lastCardValue && answer.equals("h")))) {
                 System.out.println("You are correct!");

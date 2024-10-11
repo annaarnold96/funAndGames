@@ -46,6 +46,20 @@ public class Card {
         this.suit = suit;
     }
 
+    public int setFaceCards(String cardValue){
+        if (cardValue.equals("ACE")) {
+             return 1;
+        } else if (cardValue.equals("JACK")) {
+            return 11;
+        } else if (cardValue.equals("QUEEN")) {
+            return 12;
+        } else if (cardValue.equals("KING")) {
+            return 13;
+        } else {
+            return Integer.parseInt(cardValue);
+        }
+    }
+
     @Override
     public String toString() {
         return "Card{" +
