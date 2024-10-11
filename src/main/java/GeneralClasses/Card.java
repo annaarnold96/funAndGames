@@ -47,17 +47,13 @@ public class Card {
     }
 
     public int setFaceCards(String cardValue){
-        if (cardValue.equals("ACE")) {
-             return 1;
-        } else if (cardValue.equals("JACK")) {
-            return 11;
-        } else if (cardValue.equals("QUEEN")) {
-            return 12;
-        } else if (cardValue.equals("KING")) {
-            return 13;
-        } else {
-            return Integer.parseInt(cardValue);
-        }
+        return switch (cardValue) {
+            case "ACE" -> 1;
+            case "JACK" -> 11;
+            case "QUEEN" -> 12;
+            case "KING" -> 13;
+            default -> Integer.parseInt(cardValue);
+        };
     }
 
     @Override
