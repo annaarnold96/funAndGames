@@ -1,8 +1,10 @@
 import Controllers.CardGamesController;
+import GeneralClasses.GameLoader;
+import higherOrLower.HigherOrLowerLoader;
 import picocli.CommandLine;
 
 
-@CommandLine.Command(name = "funAndGames", subcommands = {CardGamesController.class})
+@CommandLine.Command(name = "funAndGames", subcommands = {HigherOrLowerLoader.class})
 public class FunAndGames {
 
   public static void main(String[] args) {
