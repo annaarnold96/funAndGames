@@ -2,9 +2,10 @@ package Controllers;
 
 //import higherOrLower.HigherOrLower;
 import higherOrLower.HigherOrLower;
+import higherOrLower.HigherOrLowerLoader;
 import picocli.CommandLine;
 
-@CommandLine.Command(name = "cardGames", subcommands = {HigherOrLower.class})
+@CommandLine.Command(name = "cardGames", subcommands = {HigherOrLowerLoader.class})
 
 public class CardGamesController implements Runnable {
 
