@@ -65,4 +65,8 @@ public class Card {
                 ", suit='" + suit + '\'' +
                 '}';
     }
+
+    public static void printCardDrawn(String cardValue, String suit){
+        System.out.println("Card drawn is: " + cardValue + " " + suit);
+    }
 }

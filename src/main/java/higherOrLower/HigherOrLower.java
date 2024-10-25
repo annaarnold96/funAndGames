@@ -4,6 +4,7 @@ import APIs.CardDeckAPIs;
 import GeneralClasses.Card;
 import GeneralClasses.Deck;
 import Interfaces.Game;
+import GeneralClasses.GeneralMethods;
 
 //@CommandLine.Command(name="higherOrLower")
 public class HigherOrLower implements Game {
@@ -52,7 +53,7 @@ public class HigherOrLower implements Game {
 
             // Get card value & show the card
             cardValue = cardDrawn.getValue();
-            methods.printCardDrawn(cardValue, cardDrawn.getSuit());
+            Card.printCardDrawn(cardValue, cardDrawn.getSuit());
 
             intCardValue = cardDrawn.setFaceCards(cardValue);
 
@@ -63,7 +64,7 @@ public class HigherOrLower implements Game {
         // Repeat until lost
 
             // User input
-            userInput = methods.userInput();
+            userInput = GeneralMethods.userInput("Higher or lower? H/L: ");
             methods.userChoice(userInput);
 
             lastCardValue = intCardValue;
@@ -73,7 +74,7 @@ public class HigherOrLower implements Game {
 
             // Get card value & show the card
             cardValue = cardDrawn.getValue();
-            methods.printCardDrawn(cardValue, cardDrawn.getSuit());
+            Card.printCardDrawn(cardValue, cardDrawn.getSuit());
 
             // Set int for face cards
             intCardValue = cardDrawn.setFaceCards(cardValue);
