@@ -12,17 +12,6 @@ public class HLMethods {
         return answer;
     }
 
-    public boolean endGameCheck(int intCardValue, int lastCardValue, String userInput) {
-        if ((intCardValue < lastCardValue && userInput.equalsIgnoreCase("l") || (intCardValue > lastCardValue && userInput.equalsIgnoreCase("h")))) {
-            System.out.println("You are correct!");
-            return true;
-
-        } else {
-            System.out.println("You were wrong. Game over.");
-            return false;
-        }
-    }
-
     public void printCardDrawn(String cardValue, String suit){
         System.out.println("Card drawn is: " + cardValue + " " + suit);
     }
